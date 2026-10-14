@@ -1,0 +1,886 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "deductions",
+    "summary_feedback"
+  ],
+  "properties": {
+    "deductions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "layout_and_composition",
+        "text_and_typography",
+        "local_graphics_and_nodes"
+      ],
+      "properties": {
+        "layout_and_composition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "panel_misalignment",
+            "node_layout_deviation",
+            "panel_style_error"
+          ],
+          "properties": {
+            "panel_misalignment": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "canvas_crop",
+                          "canvas_aspect_ratio",
+                          "canvas_orientation",
+                          "global_scale",
+                          "global_centering",
+                          "outer_whitespace",
+                          "missing_panel",
+                          "extra_panel",
+                          "duplicate_panel",
+                          "substituted_panel",
+                          "panel_order",
+                          "panel_position",
+                          "panel_size",
+                          "panel_proportion",
+                          "panel_spacing",
+                          "panel_alignment",
+                          "separator_position",
+                          "panel_overlap",
+                          "panel_clipping",
+                          "conspicuous_blank_region",
+                          "other_panel_layout"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            },
+            "node_layout_deviation": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "missing_node",
+                          "extra_node",
+                          "duplicate_node",
+                          "substituted_node",
+                          "node_position",
+                          "node_spacing",
+                          "node_alignment",
+                          "node_distribution",
+                          "reading_order",
+                          "grid_arrangement",
+                          "grouping",
+                          "nesting",
+                          "padding",
+                          "hierarchy",
+                          "node_overlap",
+                          "node_occlusion",
+                          "z_order",
+                          "local_scale",
+                          "local_mirroring",
+                          "local_rotation",
+                          "other_node_layout"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            },
+            "panel_style_error": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "panel_fill",
+                          "panel_border_color",
+                          "panel_border_width",
+                          "panel_border_pattern",
+                          "panel_opacity",
+                          "panel_gradient",
+                          "panel_texture",
+                          "panel_clipping_mask",
+                          "panel_corner_radius",
+                          "panel_shadow",
+                          "panel_glow",
+                          "panel_bevel",
+                          "panel_outer_frame",
+                          "panel_header_strip",
+                          "panel_title_tab",
+                          "panel_separator_style",
+                          "other_panel_style"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            }
+          }
+        },
+        "text_and_typography": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "spelling_and_omission",
+            "text_overflow_or_edge_touch",
+            "improper_typography"
+          ],
+          "properties": {
+            "spelling_and_omission": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "missing_text",
+                          "extra_text",
+                          "substituted_text",
+                          "duplicated_text",
+                          "reordered_text",
+                          "incorrect_number",
+                          "incorrect_identifier",
+                          "capitalization",
+                          "punctuation",
+                          "abbreviation",
+                          "math_symbol",
+                          "greek_letter",
+                          "subscript",
+                          "superscript",
+                          "accent",
+                          "unit",
+                          "special_glyph",
+                          "wrong_label_assignment",
+                          "other_text_content"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            },
+            "text_overflow_or_edge_touch": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "edge_touch",
+                          "text_clipping",
+                          "text_truncation",
+                          "outside_text_box",
+                          "text_text_overlap",
+                          "text_node_overlap",
+                          "text_icon_overlap",
+                          "text_connector_overlap",
+                          "text_arrowhead_overlap",
+                          "text_cell_overlap",
+                          "cut_off_glyph",
+                          "insufficient_text_padding",
+                          "other_text_fit"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            },
+            "improper_typography": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "font_family",
+                          "font_size",
+                          "font_weight",
+                          "font_style",
+                          "text_color",
+                          "text_opacity",
+                          "text_contrast",
+                          "letter_spacing",
+                          "word_spacing",
+                          "line_height",
+                          "baseline",
+                          "kerning",
+                          "math_typesetting",
+                          "horizontal_alignment",
+                          "vertical_alignment",
+                          "text_anchoring",
+                          "internal_padding",
+                          "unexpected_wrap",
+                          "mid_word_break",
+                          "isolated_character_line",
+                          "hyphenation",
+                          "line_count",
+                          "line_order",
+                          "paragraph_width",
+                          "text_rotation",
+                          "text_orientation",
+                          "curved_text",
+                          "text_blur",
+                          "text_aliasing",
+                          "other_typography"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            }
+          }
+        },
+        "local_graphics_and_nodes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "node_shape_error",
+            "node_style_error",
+            "node_shadow_error",
+            "vector_and_icon_confusion",
+            "line_and_arrow_details"
+          ],
+          "properties": {
+            "node_shape_error": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "shape_type",
+                          "node_aspect_ratio",
+                          "node_size",
+                          "node_rotation",
+                          "node_orientation",
+                          "node_skew",
+                          "node_symmetry",
+                          "node_corner_radius",
+                          "notch_geometry",
+                          "folded_corner",
+                          "cutout",
+                          "tab_geometry",
+                          "port_geometry",
+                          "handle_geometry",
+                          "tail_geometry",
+                          "pointer_geometry",
+                          "missing_shape_primitive",
+                          "extra_shape_primitive",
+                          "other_node_geometry"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            },
+            "node_style_error": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "node_fill",
+                          "node_stroke",
+                          "node_border_width",
+                          "node_border_pattern",
+                          "node_color",
+                          "node_opacity",
+                          "node_transparency",
+                          "node_gradient",
+                          "node_texture",
+                          "node_hatch",
+                          "node_highlight",
+                          "node_contrast",
+                          "state_color",
+                          "palette_mapping",
+                          "three_dimensional_treatment",
+                          "node_bevel",
+                          "node_gloss",
+                          "internal_z_order",
+                          "style_consistency",
+                          "other_node_style"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            },
+            "node_shadow_error": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "shadow_presence",
+                          "shadow_offset",
+                          "shadow_direction",
+                          "shadow_blur",
+                          "shadow_spread",
+                          "shadow_color",
+                          "shadow_opacity",
+                          "glow_presence",
+                          "glow_style",
+                          "hard_vs_soft_shadow",
+                          "other_shadow"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            },
+            "vector_and_icon_confusion": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "missing_icon",
+                          "extra_icon",
+                          "substituted_icon",
+                          "malformed_icon",
+                          "mirrored_icon",
+                          "rotated_icon",
+                          "distorted_icon",
+                          "icon_state",
+                          "legend_symbol",
+                          "legend_mapping",
+                          "vector_blur",
+                          "vector_pixelation",
+                          "jagged_vector",
+                          "rasterized_vector",
+                          "grid_dimensions",
+                          "grid_count",
+                          "cell_size",
+                          "cell_spacing",
+                          "cell_border",
+                          "cell_alignment",
+                          "primitive_count",
+                          "primitive_order",
+                          "primitive_position",
+                          "primitive_color",
+                          "primitive_fill",
+                          "primitive_pattern",
+                          "mini_diagram_topology",
+                          "chart_axes",
+                          "chart_ticks",
+                          "chart_legend",
+                          "chart_series",
+                          "chart_marker",
+                          "raster_crop",
+                          "raster_stretch",
+                          "raster_blur",
+                          "raster_replacement",
+                          "other_local_graphic"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            },
+            "line_and_arrow_details": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "cases",
+                "ratio"
+              ],
+              "properties": {
+                "cases": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "issue_type",
+                      "location",
+                      "candidate",
+                      "reference",
+                      "affected_count"
+                    ],
+                    "properties": {
+                      "issue_type": {
+                        "type": "string",
+                        "enum": [
+                          "missing_connector",
+                          "extra_connector",
+                          "wrong_source_attachment",
+                          "wrong_target_attachment",
+                          "wrong_port",
+                          "detached_endpoint",
+                          "endpoint_side",
+                          "connector_direction",
+                          "arrowhead_endpoint",
+                          "intermediate_arrowhead",
+                          "bidirectionality",
+                          "arrowhead_count",
+                          "arrowhead_shape",
+                          "arrowhead_size",
+                          "arrowhead_fill",
+                          "arrowhead_outline",
+                          "arrowhead_color",
+                          "arrowhead_angle",
+                          "route_shape",
+                          "bezier_curvature",
+                          "bend_count",
+                          "bend_location",
+                          "bend_radius",
+                          "loop_shape",
+                          "bypass_shape",
+                          "parallel_spacing",
+                          "line_pattern",
+                          "dash_sequence",
+                          "dash_gap",
+                          "line_width",
+                          "line_color",
+                          "line_opacity",
+                          "line_cap",
+                          "line_join",
+                          "line_blur",
+                          "line_glow",
+                          "line_shadow",
+                          "junction_dot",
+                          "split_merge_marker",
+                          "crossing_bridge",
+                          "intersection_treatment",
+                          "connector_overlap_text",
+                          "connector_overlap_node",
+                          "connector_clipping",
+                          "border_confusion",
+                          "other_connector"
+                        ]
+                      },
+                      "location": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "candidate": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "affected_count": {
+                        "type": "integer",
+                        "minimum": 1
+                      }
+                    }
+                  }
+                },
+                "ratio": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary_feedback": {
+      "type": "string"
+    }
+  }
+}

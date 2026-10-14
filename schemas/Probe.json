@@ -1,0 +1,22 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "labels": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Labels",
+      "type": "array"
+    },
+    "wrote_file": {
+      "title": "Wrote File",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "labels",
+    "wrote_file"
+  ],
+  "title": "Probe",
+  "type": "object"
+}

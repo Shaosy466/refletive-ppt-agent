@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "refletive-ppt-agent"
+version = "0.2.0"
+description = "Codex-driven native PPT reconstruction and evaluation harness"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2,<3", "jsonschema>=4", "pptbench-pipeline==1.0.0"]
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+[project.scripts]
+ppt-harness = "pptbench_harness.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]

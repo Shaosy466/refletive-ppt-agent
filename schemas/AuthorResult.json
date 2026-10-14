@@ -1,0 +1,47 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "entrypoint": {
+      "const": "build.py",
+      "title": "Entrypoint",
+      "type": "string"
+    },
+    "spec_path": {
+      "title": "Spec Path",
+      "type": "string"
+    },
+    "changed_object_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Changed Object Ids",
+      "type": "array"
+    },
+    "change_summary": {
+      "title": "Change Summary",
+      "type": "string"
+    },
+    "unresolved": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unresolved",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "entrypoint",
+    "spec_path",
+    "changed_object_ids",
+    "change_summary",
+    "unresolved"
+  ],
+  "title": "AuthorResult",
+  "type": "object"
+}

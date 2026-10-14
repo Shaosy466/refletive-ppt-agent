@@ -1,0 +1,29 @@
+schema_version = 1
+mode = "local-dev"
+[agent]
+executable = "codex"
+model = "gpt-6-astra"
+reasoning_effort = "high"
+sandbox = "workspace-write"
+call_timeout_seconds = 900
+max_transport_retries = 1
+[dataset]
+upstream_root = "vendor/PPTBench"
+upstream_commit = "d64c09f10a4376fa46532dc82048d1b5228e8b76"
+root = "data/pptbench-tasks"
+[loop]
+max_candidates = 4
+max_explore_per_candidate = 2
+max_no_improvement = 2
+target_internal_score = 90.0
+judge_rounds = 3
+max_agent_calls = 64
+task_timeout_seconds = 14400
+[execution]
+build_timeout_seconds = 120
+render_timeout_seconds = 180
+task_concurrency = 1
+agent_concurrency = 1
+render_concurrency = 1
+[output]
+root = "runs"

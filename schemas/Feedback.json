@@ -1,0 +1,213 @@
+{
+  "$defs": {
+    "ExploreRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "image": {
+          "enum": [
+            "reference",
+            "candidate"
+          ],
+          "title": "Image",
+          "type": "string"
+        },
+        "bbox": {
+          "items": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Bbox",
+          "type": "array"
+        },
+        "scale": {
+          "maximum": 4,
+          "minimum": 1,
+          "title": "Scale",
+          "type": "number"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image",
+        "bbox",
+        "scale",
+        "reason"
+      ],
+      "title": "ExploreRequest",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "stage": {
+          "enum": [
+            "artifact",
+            "semantic",
+            "render",
+            "detail"
+          ],
+          "title": "Stage",
+          "type": "string"
+        },
+        "issue_type": {
+          "title": "Issue Type",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "reference_bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reference Bbox"
+        },
+        "candidate_bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Candidate Bbox"
+        },
+        "object_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Object Ids",
+          "type": "array"
+        },
+        "observed": {
+          "title": "Observed",
+          "type": "string"
+        },
+        "expected": {
+          "title": "Expected",
+          "type": "string"
+        },
+        "repair_hint": {
+          "title": "Repair Hint",
+          "type": "string"
+        },
+        "evidence_paths": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Paths",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "stage",
+        "issue_type",
+        "severity",
+        "reference_bbox",
+        "candidate_bbox",
+        "object_ids",
+        "observed",
+        "expected",
+        "repair_hint",
+        "evidence_paths"
+      ],
+      "title": "Issue",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "candidate_id": {
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "action": {
+      "enum": [
+        "revise",
+        "explore",
+        "done"
+      ],
+      "title": "Action",
+      "type": "string"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "title": "Issues",
+      "type": "array"
+    },
+    "explore_requests": {
+      "items": {
+        "$ref": "#/$defs/ExploreRequest"
+      },
+      "maxItems": 8,
+      "title": "Explore Requests",
+      "type": "array"
+    },
+    "preserve_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Preserve Ids",
+      "type": "array"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "action",
+    "issues",
+    "explore_requests",
+    "preserve_ids",
+    "reason"
+  ],
+  "title": "Feedback",
+  "type": "object"
+}
