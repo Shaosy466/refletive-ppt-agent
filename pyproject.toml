@@ -11,8 +11,10 @@ requires-python = ">=3.11"
 dependencies = ["pydantic>=2,<3", "jsonschema>=4", "pptbench-pipeline==1.0.0"]
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+multimodal = ["playwright>=1.55,<2", "vtk>=9.3,<10", "trimesh>=4,<5", "PyYAML>=6"]
 [project.scripts]
 ppt-harness = "pptbench_harness.cli:main"
+reflective-harness = "reflective_harness.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 [tool.pytest.ini_options]

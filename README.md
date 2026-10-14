@@ -143,3 +143,19 @@ Project code: [MIT](LICENSE), copyright 2026 Shaosy466. See [THIRD_PARTY_NOTICES
 PPTBench: https://github.com/Einsia/PPTBench, pinned commit `d64c09f10a4376fa46532dc82048d1b5228e8b76`. Bootstrap downloads it with its own MIT license and data terms intact. Scientific figures and assets retain their original rights; this repository's MIT license does not relicense them. No dataset, credentials, vendor checkout or generated PPT is bundled.
 
 Framework inspiration: https://github.com/jiangjin1999/awesome-multimodal-agentic-coding .
+
+## Multimodal adapters (development)
+
+An incremental multi-benchmark entry point is available as `reflective-harness`.
+Run `reflective-harness list` to inspect implemented versus blocked adapters.
+See [multimodal usage and limitations](docs/MULTIMODAL_USAGE.md). The new local
+profiles are not official leaderboard reproductions; catalog entries do not
+imply runnable benchmark support. Existing `ppt-harness` commands remain valid.
+
+## Continue development on a server
+
+Start with [the server Codex handoff](docs/SERVER_CODEX_HANDOFF.md). It contains
+repository orientation, Linux setup, exact next tasks for EditHero and Code4Scene,
+acceptance criteria, known reliability gaps, and a copyable Codex starting prompt.
+Historical smoke summaries are in [validation/](validation/multimodal-smoke-20261014.json);
+full local runs, datasets, vendor code and credentials are not included in Git.

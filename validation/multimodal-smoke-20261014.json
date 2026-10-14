@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "environment": "macOS local development",
+  "historical_only": true,
+  "full_trajectories_in_git": false,
+  "official_comparable": false,
+  "tests_passed": 38,
+  "rows": [
+    {
+      "benchmark": "longpuzzlebench",
+      "historical_run_id": "multi-smoke-longpuzzle-002",
+      "result": {
+        "benchmark": "longpuzzlebench",
+        "case_id": "bolt_unscrew.easy.level_01.seed_0",
+        "status": "complete",
+        "task_success": true,
+        "game_score": 1.0,
+        "termination_reason": "success",
+        "errors": [],
+        "official_comparable": false,
+        "protocol": "controlled_single_level_development",
+        "agent_calls": 3,
+        "source_lock": {
+          "repo": "AzureStarz/LongPuzzleBench",
+          "commit": "8dc5fc7e149ea9aa2e055200b0d4d1ad9e11ebe3",
+          "archive_sha256": "628cf5450538e6c89367cd2dd3dec2e227561289aefd8e58316b79819015b59e"
+        },
+        "limitations": [
+          "Single catalog level, not full autonomous cell",
+          "Local development filesystem is not strict solver isolation"
+        ]
+      }
+    },
+    {
+      "benchmark": "gamedevbench",
+      "historical_run_id": "multi-smoke-gamedev-001",
+      "result": {
+        "schema_version": 1,
+        "benchmark": "gamedevbench",
+        "case_id": "task_0002",
+        "status": "complete",
+        "candidate": "000",
+        "review_decision": "explore",
+        "execution_ok": true,
+        "evaluation": {
+          "schema_version": 1,
+          "complete": true,
+          "protocol": "upstream_tests_local_development",
+          "metrics": {
+            "pass": {
+              "schema_version": 1,
+              "value": 0.0,
+              "unit": "binary",
+              "direction": "higher",
+              "status": "ok"
+            }
+          },
+          "details": {
+            "exit_code": 0,
+            "validation": {
+              "success": false,
+              "message": "Projectile must react to enemies inside _on_area_entered",
+              "details": {},
+              "timestamp": "2026-10-14T17:30:23.238717"
+            },
+            "platform": "darwin",
+            "strict_confinement": false
+          },
+          "official_comparable": false
+        },
+        "agent_calls": 4,
+        "requested_model": "gpt-6-astra",
+        "reasoning_effort": "high"
+      }
+    },
+    {
+      "benchmark": "scivisagentbench",
+      "historical_run_id": "multi-smoke-scivis-001",
+      "result": {
+        "schema_version": 1,
+        "benchmark": "scivisagentbench",
+        "case_id": "shrink-sphere",
+        "status": "complete",
+        "candidate": "000",
+        "review_decision": "done",
+        "execution_ok": true,
+        "evaluation": {
+          "schema_version": 1,
+          "complete": true,
+          "protocol": "codex_rubric_local_vtk",
+          "metrics": {
+            "rubric_mean": {
+              "schema_version": 1,
+              "value": 8.25,
+              "unit": "0-10",
+              "direction": "higher",
+              "status": "ok"
+            }
+          },
+          "details": {
+            "rubric": {
+              "scores": [
+                7,
+                9,
+                9,
+                8
+              ],
+              "reasons": [
+                "The sphere has substantial mesh detail, but its silhouette remains visibly polygonal; doubled theta resolution cannot be confirmed from the image alone.",
+                "Small, separated elements clearly suggest a shrink filter, though an exact halving of the shrink factor cannot be verified visually.",
+                "The wireframe sphere and shrunken elements are simultaneously visible and spatially aligned; application-level grouping is not visible.",
+                "The white background and darker shrunken elements provide clear contrast, although faint wireframe lines and excessive whitespace reduce readability."
+              ]
+            },
+            "judge_model": "gpt-6-astra",
+            "effort": "high",
+            "official_suite_aggregation": false,
+            "reference_metrics_computed": false,
+            "judge_calls": 1
+          },
+          "official_comparable": false
+        },
+        "agent_calls": 3,
+        "requested_model": "gpt-6-astra",
+        "reasoning_effort": "high"
+      }
+    },
+    {
+      "benchmark": "a2z",
+      "historical_run_id": "multi-smoke-a2z-001",
+      "result": {
+        "schema_version": 1,
+        "benchmark": "a2z",
+        "case_id": "small/bin_bit",
+        "status": "evaluation_incomplete",
+        "candidate": "000",
+        "review_decision": "explore",
+        "execution_ok": true,
+        "evaluation": {
+          "schema_version": 1,
+          "complete": false,
+          "protocol": "experimental_static_web",
+          "metrics": {},
+          "details": {
+            "reason": "Official A2Z evaluator release unavailable; no official score fabricated",
+            "deviations": [
+              "HTML/JS development stack instead of official Phaser/TypeScript/Vite starter",
+              "Fixed public browser smoke is not source/replay/adaptive scoring"
+            ]
+          },
+          "official_comparable": false
+        },
+        "agent_calls": 4,
+        "requested_model": "gpt-6-astra",
+        "reasoning_effort": "high"
+      }
+    },
+    {
+      "benchmark": "edithero",
+      "historical_run_id": "multi-smoke-edithero-001",
+      "result": {
+        "schema_version": 1,
+        "benchmark": "edithero",
+        "case_id": "A/1a3267df_s0",
+        "status": "evaluation_incomplete",
+        "candidate": "000",
+        "review_decision": "done",
+        "execution_ok": true,
+        "evaluation": {
+          "schema_version": 1,
+          "complete": false,
+          "protocol": "local_vtk_chain_delivery",
+          "metrics": {
+            "delivered_turns": {
+              "schema_version": 1,
+              "value": 5.0,
+              "unit": "count out of 5",
+              "direction": "higher",
+              "status": "ok"
+            }
+          },
+          "details": {
+            "turns": [
+              {
+                "turn": 1,
+                "delivered": true,
+                "faces": 11954
+              },
+              {
+                "turn": 2,
+                "delivered": true,
+                "faces": 12110
+              },
+              {
+                "turn": 3,
+                "delivered": true,
+                "faces": 7934
+              },
+              {
+                "turn": 4,
+                "delivered": true,
+                "faces": 11258
+              },
+              {
+                "turn": 5,
+                "delivered": true,
+                "faces": 10328
+              }
+            ],
+            "reason": "Delivery validation only; official edited-region/preservation/appearance metrics unavailable"
+          },
+          "official_comparable": false
+        },
+        "agent_calls": 2,
+        "requested_model": "gpt-6-astra",
+        "reasoning_effort": "high"
+      }
+    }
+  ],
+  "not_run": [
+    "4dcodebench",
+    "code4scene",
+    "witness",
+    "ichart2code"
+  ]
+}

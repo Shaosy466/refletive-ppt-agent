@@ -1,0 +1,12 @@
+schema_version = 1
+[agent]
+executable = "codex"
+model = "gpt-6-astra"
+reasoning_effort = "high"
+sandbox = "workspace-write"
+call_timeout_seconds = 900
+max_transport_retries = 1
+[loop]
+max_candidates = 2
+max_agent_calls = 16
+task_timeout_seconds = 2400

@@ -5,3 +5,15 @@ This repository's MIT license covers its original harness code and documentation
 - **PPTBench** — https://github.com/Einsia/PPTBench, commit `d64c09f10a4376fa46532dc82048d1b5228e8b76`, MIT, copyright 2026 PPTBench Authors. Downloaded separately by bootstrap; its LICENSE and DATA_LICENSE.md remain in vendor/PPTBench. The harness imports its rendering, validation, prompts, schemas and scoring code rather than distributing a modified copy of its implementation. Exported judge schemas in schemas/Gate.json and schemas/Detail.json are derived from PPTBench; its full notice is included in licenses/PPTBench-MIT.txt.
 - **Scientific figures and resources** — materialized from upstream-approved sources. Governed by source-paper permissions and PPTBench DATA_LICENSE.md, not the harness MIT license. No benchmark images are included in this repository.
 - **Python dependencies, Codex CLI and LibreOffice** — separately installed and subject to their respective terms. Their installation does not grant model access or transfer ownership of third-party fonts.
+
+## Optional multimodal benchmark integrations
+
+Upstream source/data are fetched into ignored `vendor/` and `data/` directories;
+they are not relicensed under this project's MIT license. Pinned sources are
+recorded in `configs/benchmark-sources.lock.json`. GameDevBench and Code4Scene
+use Apache-2.0; LongPuzzleBench uses Apache-2.0 with additional game notices.
+EditHero code uses MIT and its datasets retain per-asset licenses (annotations
+CC BY 4.0; sample chain declares CC BY / CC0). A2Z uses MIT with third-party
+exceptions. Consult each downloaded upstream's LICENSE/NOTICE and dataset
+cards, including SciVisAgentBench and 4DCodeBench, before redistribution.
+No Unreal/Fab assets or benchmark target meshes are bundled here.

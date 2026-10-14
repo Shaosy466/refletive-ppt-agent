@@ -100,7 +100,14 @@ async def invoke(config, budget, work: Path, prompt: str, schema: dict, images=(
         atomic_json(ad/'execution.json',{'exit_code':rc,'usage':usage_from_events(events),'cost_usd':None})
         if rc != 0:
             last=(stderr.read_text(errors='replace')+'\n'+events.read_text(errors='replace'))[-5000:]
-            if any(s in last.lower() for s in ('401','403','model_not_found','unsupported model','unauthorized')):
+            # Plugin catalog warnings can include 401 even when model access works.
+            provider_errors=[]
+            for line in events.read_text(errors='replace').splitlines():
+                try: event=json.loads(line)
+                except ValueError: continue
+                if event.get('type') in ('error','turn.failed'):provider_errors.append(json.dumps(event))
+            provider_error='\n'.join(provider_errors).lower()
+            if any(s in provider_error for s in ('401','403','model_not_found','unsupported model','unauthorized')):
                 raise ConfigError(f'Provider/model authorization failed; inspect {ad}')
             if attempt==attempts and config['agent']['max_transport_retries'] and any(s in last.lower() for s in ('429','502','503','connection reset','stream disconnected')):
                 await asyncio.sleep(min(2,budget.remaining)); continue

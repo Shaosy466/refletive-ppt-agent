@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "GameDevBench": {
+      "repo": "waynchi/gamedevbench",
+      "commit": "39952ba6341898380ff1c2c3336101c57c99196b",
+      "sparse_files": [
+        "LICENSE",
+        "README.md",
+        "gamedevbench/src/__init__.py",
+        "gamedevbench/src/base_solver.py",
+        "gamedevbench/src/benchmark_runner.py",
+        "gamedevbench/src/claude_code_solver.py",
+        "gamedevbench/src/codex_solver.py",
+        "gamedevbench/src/confinement.py",
+        "gamedevbench/src/gemini_solver.py",
+        "gamedevbench/src/mcp_server.py",
+        "gamedevbench/src/mini_swe_solver.py",
+        "gamedevbench/src/muse_solver.py",
+        "gamedevbench/src/opencode_solver.py",
+        "gamedevbench/src/openhands_solver.py",
+        "gamedevbench/src/provider_proxy.py",
+        "gamedevbench/src/solver_factory.py",
+        "gamedevbench/src/solver_worker.py",
+        "gamedevbench/src/utils/__init__.py",
+        "gamedevbench/src/utils/constants.py",
+        "gamedevbench/src/utils/data_types.py",
+        "gamedevbench/src/utils/godot_version.py",
+        "gamedevbench/src/utils/merge_benchmark_results.py",
+        "gamedevbench/src/utils/prompts.py",
+        "gamedevbench/src/utils/validation.py",
+        "gamedevbench/src/virtual_display.py",
+        "pyproject.toml",
+        "tasks/task_0002.zip",
+        "tasks_gt/task_0002.zip"
+      ]
+    },
+    "Code4Scene": {
+      "repo": "SimWorld-AI/Code4Scene",
+      "commit": "2716e4397f768bf16b1f33dd34680d48aed0601f",
+      "archive_sha256": "0add4cf039d1b038fc3ef0efa31ae85e2da49f08eff80dd6a4849a7f01ff7445"
+    },
+    "A2Z": {
+      "repo": "krafton-ai/a2z-gamespec-bench",
+      "commit": "a61fe39d07cbd4a25e96bdad9ef2b28651fd7082",
+      "archive_sha256": "397e375ea1c9a942c2a6b366c71ada684e7a5a4c708267fa8072541b9fa3c5e1"
+    },
+    "EditHero": {
+      "repo": "AlayaLab/EditHero",
+      "commit": "f791099cd4751971443f3780fd20a88d3d0c80bf",
+      "archive_sha256": "a33dfca41e7a40f2188286e275613465b3f4f1a3bc0bd3fac8519df477aaab13"
+    },
+    "LongPuzzleBench": {
+      "repo": "AzureStarz/LongPuzzleBench",
+      "commit": "8dc5fc7e149ea9aa2e055200b0d4d1ad9e11ebe3",
+      "archive_sha256": "628cf5450538e6c89367cd2dd3dec2e227561289aefd8e58316b79819015b59e"
+    },
+    "4DCodeBench": {
+      "repo": "4DCodeBench/4DCodeBench",
+      "commit": "6c466be34107d7f388f30f97bf059b68ba1a21b0",
+      "archive_sha256": "3cabe794106cf1eefcd2af198fbcd7ad2fb1471ee3106496a96542f48f689ebe"
+    },
+    "SciVisAgentBench": {
+      "repo": "KuangshiAi/SciVisAgentBench",
+      "commit": "b9435d13e9ff979226b1754e6c467efeb026978a",
+      "archive_sha256": "de68be6117e19efae54f840d18c5d7412300475fef39c70f5f852548726d35b5"
+    }
+  },
+  "unverified": [
+    "IChart2Code official repository",
+    "Witness public validation SDK"
+  ]
+}

@@ -50,3 +50,15 @@ def test_bounded_format_repair_preserves_original(tmp_path,monkeypatch):
     raw=json.loads((tmp_path/'work/.harness/attempt-00/response.json').read_text())
     assert 'wrote_file' not in raw
     assert (tmp_path/'work/.harness/attempt-00/corrected-response.json').exists()
+
+def test_plugin_catalog_401_is_not_model_auth_failure(tmp_path,monkeypatch):
+    from pptbench_harness.workspace import ConfigError
+    async def fake(argv,cwd,stdout,stderr,timeout,stdin=None,extra_env=None):
+        stdout.write_text(json.dumps({'type':'error','message':'invalid_request_error'})+'\n')
+        stderr.write_text('Plugin catalog request returned 401 Unauthorized')
+        return 1
+    monkeypatch.setattr('pptbench_harness.codex_runner.process',fake)
+    c=load_config();b=Budget(tmp_path/'budget.json',c['loop'])
+    with pytest.raises(HarnessError,match='exited 1') as err:
+        asyncio.run(invoke(c,b,tmp_path/'work','test',{'type':'object'}))
+    assert not isinstance(err.value,ConfigError)
